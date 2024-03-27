@@ -13,10 +13,15 @@ import "swiper/css/pagination";
 
 // import required modules
 import { FreeMode, Pagination } from "swiper/modules";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const Category = () => {
   return (
     <div>
+        <SectionTitle 
+        subHeading={"--- From 11am to 10pm ---"}
+        heading={"ORDER ONLINE"}
+        ></SectionTitle>
       <Swiper
         slidesPerView={4}
         centeredSlides={true}
