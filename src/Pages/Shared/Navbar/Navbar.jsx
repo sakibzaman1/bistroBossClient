@@ -1,13 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
     const navOptions = <>
     
-        <li><a>Home </a></li>
+        <li><NavLink to='/'>Home </NavLink></li>
         <li><a>Contact Us</a></li>
         <li><a>Dashboard</a></li>
-        <li><a>Our Menu</a></li>
+        <li><NavLink to='/menu'>Our Menu</NavLink></li>
         <li><a>Our Shop</a></li>
 
     </>
