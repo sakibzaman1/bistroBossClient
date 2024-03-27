@@ -26,30 +26,30 @@ const Category = () => {
           clickable: true,
         }}
         modules={[FreeMode, Pagination]}
-        className="mySwiper text-center"
+        className="mySwiper text-center mb-10"
       >
-        <SwiperSlide>
+        <SwiperSlide className="mb-20">
           <img className="w-80" src={img1} alt="" />
-          <h3 className="text-4xl -mt-20 text-black">Salad</h3>
+          <h3 className="text-4xl -mt-16  text-white">SALADS</h3>
         </SwiperSlide>
         <SwiperSlide>
           <img className="w-80" src={img2} alt="" />
-          <h3 className="text-4xl -mt-20 text-black">Salad</h3>
+          <h3 className="text-4xl -mt-16 text-white">SOUPS</h3>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
-          <img className="w-80" src={img3} alt="" />{" "}
-          <h3 className="text-4xl -mt-20 text-black">Salad</h3>
+          
+          <img className="w-80" src={img3} alt="" />
+          <h3 className="text-4xl -mt-16 text-white">PIZZAS</h3>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
-          <img className="w-80" src={img4} alt="" />{" "}
-          <h3 className="text-4xl -mt-20 text-black">Salad</h3>
+      
+          <img className="w-80" src={img4} alt="" />
+          <h3 className="text-4xl -mt-16 text-white">DESERTS</h3>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
-          <img className="w-80" src={img5} alt="" />{" "}
-          <h3 className="text-4xl -mt-20 text-black">Salad</h3>
+
+          <img className="w-80" src={img5} alt="" />
+          <h3 className="text-4xl -mt-16 text-white">SALADS</h3>
         </SwiperSlide>
       </Swiper>
     </div>
