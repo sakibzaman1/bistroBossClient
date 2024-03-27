@@ -11,6 +11,7 @@ const MenuCategory = ({items, title, coverImg}) => {
                     items.map(item=> <ItemCard key={item?.id} item={item}></ItemCard>)
                 }
             </div>
+            <button className='btn flex mx-auto'>Order Your Favorite Food</button>
         </div>
     );
 };
