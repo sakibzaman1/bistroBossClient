@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Navbar = () => {
+
+  const {user, logOutUser} = useContext(AuthContext);
+
+     // Sign Out Button
+
+     const handleLogOut = () => {
+      logOutUser()
+          .then(() => {
+          })
+          .catch(error => console.log(error.message))
+  }
 
     const navOptions = <>
     
@@ -33,10 +45,15 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <NavLink to='/login'><button>Login</button></NavLink>
+    <div>
+      {
+        user? <button onClick={handleLogOut}>Logout</button> : <NavLink to='/login'><button>Login</button></NavLink>
+        
+      }
+    </div>
     <div className="avatar ml-4 mr-2">
   <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+    <img src={user?.photoURL} />
   </div>
 </div>
   </div>
