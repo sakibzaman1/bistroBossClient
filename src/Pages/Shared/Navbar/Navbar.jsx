@@ -19,7 +19,9 @@ const Navbar = () => {
     
         <li><NavLink to='/'>Home </NavLink></li>
         <li><a>Contact Us</a></li>
-        <li><a>Dashboard</a></li>
+        {
+          user? <li><NavLink to='/dashboard'>Dashboard</NavLink></li> : ''
+        }
         <li><NavLink to='/menu'>Our Menu</NavLink></li>
         <li><NavLink to='/order/salad'>Our Shop</NavLink></li>
 
