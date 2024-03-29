@@ -3,12 +3,13 @@ import UseAuth from '../../../Hooks/UseAuth';
 import swal from 'sweetalert';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { axiosSecure } from '../../../Hooks/UseAxiosSecure';
+import UseAxiosSecure from '../../../Hooks/UseAxiosSecure';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
 const FoodCard = ({item}) => {
     const {user} = useContext(AuthContext);;
     const {image, name, recipe, category, price , _id} = item;
+    const axiosSecure = UseAxiosSecure();
 
     const navigate = useNavigate();
     const location = useLocation();
