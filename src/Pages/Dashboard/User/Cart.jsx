@@ -84,7 +84,7 @@ const Cart = () => {
                   <div className="flex items-center gap-3">
                     <div>
                       <div className="font-bold">{item.name}</div>
-                      <div className="text-sm opacity-50">United States</div>
+                      <div className="text-sm opacity-50"></div>
                     </div>
                   </div>
                 </td>

@@ -112,9 +112,9 @@ const AllUsers = () => {
                 <td>
                   <div className="flex items-center gap-3">
                     <div>
-                      <div className="text-sm opacity-50 bg-amber-600 p-2 rounded-full text-white">
+                      <div className="text-sm opacity-50 bg-amber-600 p-2 rounded-full text-white w-16 text-center">
                         {
-                          isAdmin? "Admin" : "User"
+                          user?.email.toLowerCase() === admin? "Admin" : "User"
                         }
                       </div>
                     </div>

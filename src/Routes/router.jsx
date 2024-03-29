@@ -15,6 +15,12 @@ import AddItems from '../Pages/Dashboard/Admin/AddItems';
 import ManageItems from '../Pages/Dashboard/Admin/ManageItems';
 import ManageBookings from '../Pages/Dashboard/Admin/ManageBookings';
 import AdminHome from '../Pages/Dashboard/Admin/AdminHome';
+import Contact from '../Pages/Contact/Contact';
+import MyBooking from '../Pages/Dashboard/User/MyBooking';
+import Payment from '../Pages/Dashboard/User/Payment';
+import Reservation from '../Pages/Dashboard/User/Reservation';
+import AddReview from '../Pages/Dashboard/User/AddReview';
+import UserHome from '../Pages/Dashboard/User/UserHome';
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +31,10 @@ export const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>
+        },
+        {
+          path : 'contact',
+          element: < Contact></Contact>
         },
         {
           path: '/menu',
@@ -49,8 +59,28 @@ export const router = createBrowserRouter([
       element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children: [
         {
+          path: 'userhome',
+          element: <UserHome></UserHome>
+        },
+        {
           path: 'cart',
           element: <Cart></Cart>
+        },
+        {
+          path: 'mybookings',
+          element: <MyBooking></MyBooking>
+        },
+        {
+          path: 'payment',
+          element: <Payment></Payment>
+        },
+        {
+          path: 'reservation',
+          element: <Reservation></Reservation>
+        },
+        {
+          path: 'addreview',
+          element: <AddReview></AddReview>
         },
         {
           path : '/dashboard/',

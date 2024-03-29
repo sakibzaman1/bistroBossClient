@@ -5,7 +5,7 @@ import { BsCart4 } from "react-icons/bs";
 import UseCart from "../../../Hooks/UseCart";
 
 const Navbar = () => {
-  const { user, logOutUser } = useContext(AuthContext);
+  const { user, logOutUser, admin } = useContext(AuthContext);
   const [carts] = UseCart();
 
   // Sign Out Button
@@ -22,7 +22,7 @@ const Navbar = () => {
         <NavLink to="/">Home </NavLink>
       </li>
       <li>
-        <a>Contact Us</a>
+        <NavLink to="/contact" >Contact Us</NavLink>
       </li>
       {user ? (
         <li>
@@ -37,12 +37,14 @@ const Navbar = () => {
       <li>
         <NavLink to="/order/salad">Our Shop</NavLink>
       </li>
-      <li>
+      {
+        user?.email.toLowerCase() === admin? '' :   <li>
         <NavLink to='dashboard/cart'>
           <BsCart4></BsCart4>
           <div className="badge badge-secondary">{carts?.length}</div>
         </NavLink>
       </li>
+      }
     </>
   );
 

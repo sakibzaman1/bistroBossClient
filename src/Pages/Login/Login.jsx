@@ -89,11 +89,11 @@ const Login = () => {
     const userCaptchaValue = captchaRef.current.value;
     
     if(validateCaptcha(userCaptchaValue)){
-      alert('Captcha MAtched');
+      
       setDisabled(false);
     }
     else{
-      alert('Captcha Not Matched')
+      
       setDisabled(true)
     }
   }

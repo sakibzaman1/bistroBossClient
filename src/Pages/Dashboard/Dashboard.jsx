@@ -53,11 +53,11 @@ const Dashboard = () => {
             <ul className="text-2xl space-y-6 font-Jost">
               <li className="flex items-center gap-4 justify-start">
                 <IoHomeOutline></IoHomeOutline>
-                <NavLink to="/dashboard/">Home</NavLink>
+                <NavLink to="/dashboard/userhome">Home</NavLink>
               </li>
               <li className="flex items-center gap-4 justify-start">
                 <FaRegAddressBook></FaRegAddressBook>
-                <NavLink to="/dashboard/mybooking">My Booking</NavLink>
+                <NavLink to="/dashboard/mybookings">My Booking</NavLink>
               </li>
               <li className="flex items-center gap-4 justify-start">
                 <RiUserShared2Line></RiUserShared2Line>
