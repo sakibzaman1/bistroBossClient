@@ -3,6 +3,7 @@ import React from "react";
 import { MdOutlineDeleteSweep } from "react-icons/md";
 import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
 import UseCart from "../../../Hooks/UseCart";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     const [cart, refetch] = UseCart();
@@ -49,7 +50,7 @@ const Cart = () => {
                   <h2 className="text-3xl">Total Price : {totalPrice}</h2>
                 </th>
                 <th>
-                  <button className="btn btn-primary">Pay</button>
+                  <Link to="/dashboard/payment"><button className="btn btn-primary">Pay</button></Link>
                 </th>
               </tr>
             </thead>
