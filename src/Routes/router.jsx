@@ -10,11 +10,17 @@ import Dashboard from '../Pages/Dashboard/Dashboard';
 import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 import Cart from '../Pages/Dashboard/User/Cart';
 import AllUsers from '../Pages/Dashboard/Admin/AllUsers';
+import ErrorPage from '../Components/ErrorPage/ErrorPage';
+import AddItems from '../Pages/Dashboard/Admin/AddItems';
+import ManageItems from '../Pages/Dashboard/Admin/ManageItems';
+import ManageBookings from '../Pages/Dashboard/Admin/ManageBookings';
+import AdminHome from '../Pages/Dashboard/Admin/AdminHome';
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
@@ -47,8 +53,24 @@ export const router = createBrowserRouter([
           element: <Cart></Cart>
         },
         {
+          path : '/dashboard/',
+          element : <AdminHome></AdminHome>
+        },
+        {
           path: 'allusers',
           element: <AllUsers></AllUsers>
+        },
+        {
+          path : 'additems',
+          element: <AddItems></AddItems>
+        },
+        {
+          path: 'manageitems',
+          element: <ManageItems></ManageItems>
+        },
+        {
+          path: 'managebookings',
+          element : <ManageBookings></ManageBookings>
         }
       ]
     }

@@ -5,8 +5,11 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { BiLowVision, BiShowAlt } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 import loginImg from '../../assets/others/authentication2.png'
+import UseAxiosPublic from '../../Hooks/UseAxiosPublic';
 
 const Login = () => {
+
+  const axiosPublic = UseAxiosPublic();
 
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState("");
@@ -52,23 +55,34 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
       signInWithGoogle()
-        .then(() => {
-          swal({
-            position: "top-center",
-            icon: "success",
-            title: "Successfully Logged In",
-            showConfirmButton: false,
-            showCancelButton: false,
-            timer: 2000,
-          });
-          // navigate user
-          setTimeout(() => {
-            navigate(location?.state ? location.state : "/");
-          }, 2000);
-        })
-        .catch((error) => {
-          setLoginError(error.message);
-        });
+          .then((result) => {
+              // user data entry in database
+              const userInfo = {
+                  email: result.user?.email,
+                  name: result.user?.displayName,
+                  photoURL : result.user?.photoURL
+              }
+              axiosPublic.post('/users', userInfo)
+              .then(res=> {
+                  console.log(res.data);
+                  swal({
+                      position: 'top-center',
+                      icon: 'success',
+                      title: 'Successfully Signed In',
+                      showConfirmButton: false,
+                      showCancelButton: false,
+                      timer: 2000
+                  });
+                  // navigate user
+                  setTimeout(() => {
+                      navigate(location?.state ? location.state : '/')
+                  }, 2000)
+              })
+             
+          })
+          .catch((error) => {
+              setLoginError(error.message)
+          })
   }
 
   const handleValidateCaptcha = () => {

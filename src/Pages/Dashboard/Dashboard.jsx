@@ -30,15 +30,15 @@ const Dashboard = () => {
             </li>
             <li className="flex items-center gap-4 justify-start">
               <FaRegAddressBook></FaRegAddressBook>
-              <NavLink to="/dashboard/mybooking">Add Items</NavLink>
+              <NavLink to="/dashboard/additems">Add Items</NavLink>
             </li>
             <li className="flex items-center gap-4 justify-start">
               <RiUserShared2Line></RiUserShared2Line>
-              <NavLink to="/dashboard/payment">Manage Items</NavLink>
+              <NavLink to="/dashboard/manageitems">Manage Items</NavLink>
             </li>
             <li className="flex items-center gap-4 justify-start">
               <MdOutlineManageSearch></MdOutlineManageSearch>
-              <NavLink to="/dashboard/reservation">Manage Bookings</NavLink>
+              <NavLink to="/dashboard/managebookings">Manage Bookings</NavLink>
             </li>
             <li className="flex items-center gap-4 justify-start">
               <MdOutlineManageSearch></MdOutlineManageSearch>
@@ -92,7 +92,7 @@ const Dashboard = () => {
             </li>
             <li className="flex items-center gap-4 justify-start">
               <IoHomeOutline></IoHomeOutline>
-              <NavLink to="/ourShop/salad">Shop</NavLink>
+              <NavLink to="/order/salad">Shop</NavLink>
             </li>
             <li className="flex items-center gap-4 justify-start">
               <IoHomeOutline></IoHomeOutline>
