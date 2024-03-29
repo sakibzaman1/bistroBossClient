@@ -32,7 +32,7 @@ const FoodCard = ({item}) => {
             swal({
               position: 'top-center',
               icon: 'success',
-              title: 'Package Booked Successfully',
+              title: 'Item Added Successfully',
               showConfirmButton: false,
               showCancelButton: false,
               timer: 2000
