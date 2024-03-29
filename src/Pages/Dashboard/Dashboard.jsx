@@ -10,9 +10,9 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Dashboard = () => {
     const [cart] = UseCart();
-    const {user} = useContext(AuthContext)
+    const {user, admin} = useContext(AuthContext)
 
-    const isAdmin = user?.email.toLowerCase() === 'sakibzaman54@gmail.com';
+    const isAdmin = user?.email.toLowerCase() === admin;
     return (
         <div className="flex">
         <div className="w-96 bg-[#D1A054] min-h-screen  p-6">

@@ -10,6 +10,7 @@ export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({children}) => {
+    const admin = 'sakibzaman54@gmail.com';
     const [loading, setLoading] = useState(true);
 
     // set user
@@ -80,7 +81,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
 
-    const authInfo = { user, createUser, updateUser, signInUser, signInWithGoogle, logOutUser, loading, goToTop };
+    const authInfo = { user, createUser, updateUser, signInUser, signInWithGoogle, logOutUser, loading, goToTop, admin };
 
 
     return (

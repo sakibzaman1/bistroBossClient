@@ -7,12 +7,13 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import swal from "sweetalert";
 import { Helmet } from "react-helmet";
 import registerImg from '../../assets/others/authentication2.png'
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 
 const Register = () => {
 
     const { createUser, updateUser, goToTop } = useContext(AuthContext);
 
-//   const axiosPublic = useAxiosPublic();
+  const axiosPublic = UseAxiosPublic();
 
   const [showPassword, setShowPassword] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -73,28 +74,29 @@ const Register = () => {
         updateUser(name, photo)
           .then(() => {
             // user data entry in database
-            // const userInfo = {
-            //   name: name,
-            //   email: email,
-            // };
-            // axiosPublic.post("/users", userInfo).then((res) => {
-            //   if (res.data.insertedId) {
-            //     console.log('user added to database')
+            const userInfo = {
+              name: name,
+              email: email,
+              photoURL : photo
+            };
+            axiosPublic.post("/users", userInfo).then((res) => {
+              if (res.data.insertedId) {
+                console.log('user added to database')
+                swal({
+                  position: "top-center",
+                  icon: "success",
+                  title: "Registration Successfull",
+                  showConfirmButton: false,
+                  showCancelButton: false,
+                  timer: 2000,
+                });
+              setTimeout(() => {
+                  navigate("/");
+                }, 2000);
                
-               
-            //   }
-            // });
-            swal({
-                position: "top-center",
-                icon: "success",
-                title: "Registration Successfull",
-                showConfirmButton: false,
-                showCancelButton: false,
-                timer: 2000,
-              });
-            setTimeout(() => {
-                navigate("/");
-              }, 2000);
+              }
+            });
+           
           })
           .catch();
       })
